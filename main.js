@@ -10,5 +10,5 @@ app.whenReady().then(function() {
     },
   });
   win.removeMenu();
-  win.loadFile(`${__dirname}/frontend/index.html`);
+  win.loadURL(`${__dirname}/frontend/index.html`);
 });
