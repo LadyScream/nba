@@ -35,3 +35,10 @@ boton.addEventListener('click', function() {
     }
   });
 });
+
+
+document.addEventListener("keydown", (e) => {
+  if (e.which === 123) {
+    require("electron").remote.getCurrentWindow().toggleDevTools();
+  }
+});
