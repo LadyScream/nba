@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Ver datos</h1>
+            <div class="select is-fullwidth">
+                <select id="jugador">
+                    <option value="">Elige un jugador</option>
+                </select>
+            </div>
+            <br>
+            <button class="button is-primary is-fullwidth" id="todos">Mostrar todos</button>
+            <br>
+            <table class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Procedencia</th>
+                        <th>Altura</th>
+                        <th>Peso</th>
+                        <th>Posición</th>
+                        <th>Nombre de equipo</th>
+                    </tr>
+                </thead>
+                <tbody id="datos"></tbody>
+            </table>
+        </div>
+    </section>
+    <script src="js/verdatos.js"></script>
+</body>
+</html>
