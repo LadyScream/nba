@@ -11,36 +11,25 @@
       <div class="container">
         <div class="columns">
           <div class="column">
-            <h1 class="title">Ver datos</h1>
+            <h1 class="title">Administrar</h1>
           </div>
           <div class="column has-text-right">
+            <a href="nuevoUsuario.html" class="button is-primary">Añadir nuevo</a>
             <a href="inicio.html" class="button">Volver</a>
           </div>
         </div>
-        <div class="select is-fullwidth">
-          <select id="jugador">
-            <option value="">Elige un jugador</option>
-          </select>
-        </div>
-        <br>
-        <button class="button is-primary is-fullwidth" id="todos">Mostrar todos</button>
-        <br>
         <table class="table is-fullwidth">
           <thead>
             <tr>
-              <th>Código</th>
               <th>Nombre</th>
-              <th>Procedencia</th>
-              <th>Altura</th>
-              <th>Peso</th>
-              <th>Posición</th>
-              <th>Nombre de equipo</th>
+              <th>Permisos</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody id="datos"></tbody>
         </table>
       </div>
     </section>
-    <script src="js/verdatos.js"></script>
+    <script src="js/administrar.js"></script>
   </body>
 </html>

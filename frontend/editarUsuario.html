@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <h1 class="title">Editar Usuario <span id="nombre"></span></h1>
+          </div>
+          <div class="column has-text-right">
+            <a href="administrar.html" class="button">Volver</a>
+          </div>
+        </div>
+        <div class="notification is-hidden" id="notificacion"></div>
+        <div class="field">
+          <label class="checkbox">
+            <input type="checkbox" id="select">
+            SELECT
+          </label>
+        </div>
+        <div class="field">
+          <label class="checkbox">
+            <input type="checkbox" id="insert">
+            INSERT
+          </label>
+        </div>
+        <div class="field">
+          <label class="checkbox">
+            <input type="checkbox" id="grant">
+            GRANT OPTION
+          </label>
+        </div>
+        <div class="field">
+          <input type="submit" value="Editar" class="button is-primary
+          is-fullwidth" id="editar">
+        </div>
+      </div>
+    </section>
+    <script src="js/editarUsuario.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+              <div class="column">
+                <h1 class="title">Nuevo usuario</h1>
+              </div>
+              <div class="column has-text-right">
+                <a href="administrar.html" class="button">Volver</a>
+              </div>
+            </div>
+        </div>
+        <div class="notification is-hidden" id="notificacion">
+        </div>
+        <form>
+          <div class="field">
+            <label class="label">Nombre</label>
+            <input required class="input required" type="text" id="nombre">
+          </div>
+          <div class="field">
+            <label class="label">Contraseña</label>
+            <input required class="input required" type="password" id="contra">
+          </div>
+          <div class="field">
+            <input type="submit" value="Crear" class="button is-primary
+            is-fullwidth" id="boton">
+          </div>
+        </form>
+    </section>
+    <script src="js/nuevoUsuario.js"></script>
+</body>
+</html>
