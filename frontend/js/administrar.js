@@ -1,7 +1,12 @@
+// Requerimos los módulos 'electron-store' y 'mysql'
+// electron-store es utilizado para guardar la información sobre el usuario, la
+// contraseña y la ip del servidor
 const Store = require('electron-store');
 const mysql = require('mysql');
 const store = new Store();
 
+// Creamos una conexión a la base de datos con la información que esta guardada
+// en el store
 const conexion = mysql.createConnection({
   host: store.get('IP'), // ESTE LO CAMBIAS EN TU CASA
   user: store.get('nombre'),
@@ -9,14 +14,20 @@ const conexion = mysql.createConnection({
   database: 'nba',
 });
 
+// Nos conectamos a la base de datos
 conexion.connect();
 let usuarios;
 
+// Corre una consulta en la base de datos que pide todos los usuarios
+// disponibles, y despues muestra los usuarios que no son 'root' o 'pma' en la
+// tabla usando la función 'mostrarEnTabla'
 conexion.query('SELECT * FROM mysql.user', function(error, results) {
   if (error) throw error;
   mostrarEnTabla(results.filter((u) => u.User != 'root' && u.User != 'pma'));
 });
 
+// Esta función como tal da formato a la información de los usuarios y la
+// muestra en la tabla
 function mostrarEnTabla(datos) {
   const tabla = document.querySelector('#datos');
   tabla.innerHTML = '';
