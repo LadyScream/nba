@@ -19,5 +19,5 @@ app.whenReady().then(function() {
   // Cargamos el archivo index.html que se encuentra en el directorio del
   // proyecto, bajo la carpeta frontend, este es el archivo principal donde se
   // ejecutará la aplicación
-  win.loadURL(`${__dirname}/frontend/index.html`);
+  win.loadFile(`${__dirname}/frontend/index.html`);
 });

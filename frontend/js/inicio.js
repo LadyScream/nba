@@ -34,7 +34,8 @@ conexion.query(`SHOW GRANTS FOR '${name}'`, function(error, results) {
   if (error) throw error;
 
   // Guardamos la cadena con los permisos en la variable 'perms'
-  const perms = results[1][`Grants for ${name}@%`];
+  const r = results.filter((r) => r[`Grants for ${name}@%`].includes('nba'));
+  const perms = r[0][`Grants for ${name}@%`];
 
   // Si la cadena guardada en perms contiene la palabra SELECT o ALL PRIVILEGES
   // el usuario tiene permisos para usar el select y se guarda en la variable

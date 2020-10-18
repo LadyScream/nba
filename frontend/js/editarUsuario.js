@@ -29,7 +29,8 @@ const grantDOM = document.querySelector('#grant');
 // OPTION se mostrarán en la página
 conexion.query(`SHOW GRANTS FOR '${name}'`, function(error, results) {
   if (error) throw error;
-  const perms = results[1][`Grants for ${name}@%`];
+  const r = results.filter((r) => r[`Grants for ${name}@%`].includes('nba'));
+  const perms = r[0][`Grants for ${name}@%`];
   const select = perms.includes('SELECT') || perms.includes('ALL PRIVILEGES');
   selectDOM.checked = select;
   const insert = perms.includes('INSERT') || perms.includes('ALL PRIVILEGES');

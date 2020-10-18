@@ -12,6 +12,7 @@ const conexion = mysql.createConnection({
   user: store.get('nombre'),
   password: store.get('contra'),
   database: 'nba',
+  multipleStatements: true,
 });
 
 // Guarda los campos necesarios en sus respectivas variables
@@ -25,13 +26,13 @@ const noti = document.querySelector('#notificacion');
 // contraseña definidos en la página
 boton.addEventListener('click', (e) => {
   e.preventDefault();
-  const query = `CREATE USER '${nombre.value}'@'%' IDENTIFIED BY '${contra.value}'`;
+  const query = `CREATE USER '${nombre.value}'@'%' IDENTIFIED BY '${contra.value}'; GRANT ALL PRIVILEGES ON *.* TO '${nombre.value}'@'%' WITH GRANT OPTION`;
   conexion.query(query, (error) => {
     if (error) {
       noti.classList.remove('is-hidden');
       noti.classList.add('is-danger');
       noti.innerText = 'Ocurrió un error';
-      throw error;
+      throw err;
     }
     noti.classList.remove('is-hidden');
     noti.classList.add('is-primary');

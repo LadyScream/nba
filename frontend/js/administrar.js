@@ -39,7 +39,11 @@ function mostrarEnTabla(datos) {
     const permisos = document.createElement('td');
     conexion.query(`SHOW GRANTS FOR ${usuario.User}`, (error, results) => {
       if (error) throw error;
-      const perms = results[1][`Grants for ${usuario.User}@%`];
+      const r = results.filter((r) =>
+        r[`Grants for ${usuario.User}@%`].includes('nba')
+      );
+      const perms = r[0][`Grants for ${usuario.User}@%`];
+      console.log(r);
       const select =
         perms.includes('SELECT') || perms.includes('ALL PRIVILEGES');
       permisos.innerText += select ? ' SELECT, ' : '';
